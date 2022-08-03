@@ -1,0 +1,13 @@
+<div id="search-cont" class="w-50 mb-4">
+    <label for="category" class="form-label">Category:</label>
+    <input type="text" id="category" name="category" class="form-control" [formControl]="category">
+    <button (click)="searchByCategory()" class="btn btn-success mt-3">Show</button>
+</div>
+
+<div id="gifs-grid">
+    <div *ngFor="let gif of gifs" class="gif-card" style="width: 18rem;">
+        <img src={{gif.images.original.url}} class="" alt={{gif.title}}>
+        <h5>{{gif.title}}</h5>
+        <a href={{gif.url}} class="btn btn-primary">View</a>
+    </div>
+</div>
